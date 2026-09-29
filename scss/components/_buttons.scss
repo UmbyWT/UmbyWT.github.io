@@ -1,0 +1,66 @@
+// Varianti di pulsante create con il mixin button-variant() di Bootstrap.
+// In dark mode ridefinisco solo le variabili CSS che Bootstrap espone
+// su ogni .btn (--bs-btn-bg, --bs-btn-color, ...).
+.btn-ink {
+  @include button-variant(
+    $ink, $ink,
+    $color: $cream,
+    $hover-background: $caramel,
+    $hover-border: $caramel,
+    $hover-color: #fff,
+    $active-background: shade-color($caramel, 12%),
+    $active-border: shade-color($caramel, 12%)
+  );
+
+  @include color-mode(dark) {
+    --bs-btn-bg: #{$night-accent};
+    --bs-btn-border-color: #{$night-accent};
+    --bs-btn-color: #{$night};
+    --bs-btn-hover-bg: #{$night-text};
+    --bs-btn-hover-border-color: #{$night-text};
+    --bs-btn-hover-color: #{$night};
+    --bs-btn-active-bg: #{$night-text};
+    --bs-btn-active-color: #{$night};
+  }
+}
+
+.btn-line {
+  @include button-outline-variant($ink, $color-hover: $cream);
+
+  @include color-mode(dark) {
+    --bs-btn-color: #{$night-text};
+    --bs-btn-border-color: #{$night-line};
+    --bs-btn-hover-bg: #{$night-text};
+    --bs-btn-hover-border-color: #{$night-text};
+    --bs-btn-hover-color: #{$night};
+    --bs-btn-active-bg: #{$night-text};
+    --bs-btn-active-color: #{$night};
+  }
+}
+
+// Pulsante chiaro per le fasce blu
+.btn-cream {
+  @include button-variant(
+    $cream, $cream,
+    $color: $ink,
+    $hover-background: $caramel-light,
+    $hover-border: $caramel-light,
+    $hover-color: $ink
+  );
+
+  @include color-mode(dark) {
+    --bs-btn-bg: #{$night-accent};
+    --bs-btn-border-color: #{$night-accent};
+    --bs-btn-color: #{$night};
+  }
+}
+
+.btn {
+  .arrow {
+    display: inline-block;
+    margin-left: .35rem;
+    @include motion-ok { transition: transform .2s ease; }
+  }
+
+  &:hover .arrow { transform: translateX(3px); }
+}

@@ -1,0 +1,90 @@
+// Stili di base che completano il reboot di Bootstrap
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: rem(88); // i link interni non finiscono sotto il menu sticky
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--ub-bg);
+  color: var(--ub-text);
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--ub-text);
+  letter-spacing: -.015em;
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+a {
+  text-underline-offset: .2em;
+  text-decoration-thickness: 1px;
+  transition: color .15s ease;
+
+  &:hover { text-decoration-thickness: 2px; }
+}
+
+:focus-visible { @include focus-ring; }
+
+img { max-width: 100%; height: auto; }
+
+::selection {
+  background: var(--ub-accent);
+  color: var(--ub-bg);
+}
+
+.eyebrow { @include eyebrow; }
+
+.text-muted-ub { color: var(--ub-muted) !important; }
+
+.accent { color: var(--ub-accent); }
+
+// Link "salta al contenuto" (usa la classe .visually-hidden-focusable di Bootstrap)
+.skip-link {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+  z-index: 2000;
+  padding: .6rem 1rem;
+  background: var(--ub-text);
+  color: var(--ub-bg);
+  border-radius: $border-radius;
+  text-decoration: none;
+}
+
+// Sezioni
+.section {
+  padding-block: clamp(3.5rem, 9vw, 6.5rem);
+
+  &--tight { padding-block: clamp(2.5rem, 6vw, 4rem); }
+  &--line { border-top: 1px solid var(--ub-line); }
+}
+
+.section-head {
+  max-width: 44rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+
+  h2 { font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.6rem); }
+  p:not(.eyebrow) { color: var(--ub-muted); font-size: 1.125rem; margin-bottom: 0; }
+}
+
+// Intestazione delle pagine interne
+.page-hero {
+  padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2rem, 5vw, 3rem);
+
+  h1 {
+    font-size: clamp(2.4rem, 1.4rem + 4.5vw, 4rem);
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    max-width: 44rem;
+    color: var(--ub-muted);
+  }
+}

@@ -1,0 +1,57 @@
+// =============================================================
+// Funzioni e mixin del progetto
+// (quelli di Bootstrap, come media-breakpoint-up, sono già
+// disponibili perché importati prima in main.scss)
+// =============================================================
+@use "sass:math";
+
+// px -> rem, per scrivere misure leggibili
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+// Etichetta maiuscola sopra i titoli
+@mixin eyebrow {
+  display: inline-block;
+  margin-bottom: .75rem;
+  font-size: rem(13);
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ub-accent);
+}
+
+// Anello di focus coerente per tastiera
+@mixin focus-ring($offset: 3px) {
+  outline: 3px solid var(--ub-accent);
+  outline-offset: $offset;
+}
+
+// Superficie "carta" per card e pannelli
+@mixin surface($radius: $border-radius-lg) {
+  background: var(--ub-surface);
+  border: 1px solid var(--ub-line);
+  border-radius: $radius;
+  box-shadow: var(--ub-shadow);
+}
+
+// Nasconde visivamente un elemento lasciandolo accessibile
+// (usato per checkbox e radio dei componenti "solo CSS")
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Animazioni solo per chi non ha chiesto movimento ridotto
+@mixin motion-ok {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}

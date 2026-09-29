@@ -1,0 +1,65 @@
+.site-footer {
+  margin-top: auto;
+  padding-block: 3rem 2rem;
+  background: var(--ub-band);
+  color: var(--ub-band-muted);
+
+  a {
+    color: var(--ub-band-text);
+    text-decoration: none;
+
+    &:hover { color: var(--ub-band-accent); }
+  }
+
+  .brand {
+    color: var(--ub-band-text);
+    small { color: var(--ub-band-muted); }
+  }
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 3rem;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+
+  > * { flex: 1 1 14rem; }
+
+  p { max-width: 22rem; margin: 1rem 0 0; font-size: .95rem; }
+}
+
+.footer-title {
+  margin-bottom: .75rem;
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ub-band-accent);
+}
+
+.footer-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li + li { margin-top: .4rem; }
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  font-size: .875rem;
+}
+
+// Freccia per i link esterni
+.ext::after {
+  content: "\2197"; // ↗
+  display: inline-block;
+  margin-left: .25em;
+  font-size: .85em;
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contatti · Umberto Brignone</title>
+  <meta name="description" content="Scrivimi per una consulenza AI per la tua azienda o per un corso di formazione sull&#x27;intelligenza artificiale.">
+  <meta name="author" content="Umberto Brignone">
+  <link rel="canonical" href="https://umbywt.github.io/contatti.html">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f8f4ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10172a" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph: anteprima quando il link viene condiviso -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Umberto Brignone">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Contatti · Umberto Brignone">
+  <meta property="og:description" content="Scrivimi per una consulenza AI per la tua azienda o per un corso di formazione sull&#x27;intelligenza artificiale.">
+  <meta property="og:url" content="https://umbywt.github.io/contatti.html">
+  <meta property="og:image" content="https://umbywt.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Umberto Brignone, AI Strategist e consulente AI per PMI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contatti · Umberto Brignone">
+  <meta name="twitter:description" content="Scrivimi per una consulenza AI per la tua azienda o per un corso di formazione sull&#x27;intelligenza artificiale.">
+  <meta name="twitter:image" content="https://umbywt.github.io/assets/img/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/roboto-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/roboto-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link visually-hidden-focusable" href="#contenuto">Vai al contenuto</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/img/favicon.svg" alt="" width="40" height="40">
+        <span><strong>Umberto Brignone</strong><small>AI Strategist · Consulente AI per PMI</small></span>
+      </a>
+
+      <!-- Menu mobile senza JavaScript: la checkbox apre e chiude il menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Apri o chiudi il menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <nav class="site-nav" aria-label="Menu principale">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="progetti.html">Progetti</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li class="nav-cta"><a href="contatti.html" aria-current="page">Contattami</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Contatti</p>
+        <h1>Scrivimi</h1>
+        <p class="lead">Raccontami in poche righe che azienda hai e cosa ti porta via più tempo. Leggo io ogni messaggio e rispondo di persona.</p>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-start">
+          <div class="col-lg-7">
+            <div class="card contact-card">
+              <div class="card-body">
+                <!-- Il modulo invia i dati a Formspree, che li inoltra alla mia email.
+                     Nessun indirizzo email nel codice, nessun JavaScript. -->
+                <form action="https://formspree.io/f/xjyklead" method="POST" accept-charset="UTF-8">
+                  <input type="hidden" name="_subject" value="Nuovo messaggio da umbywt.github.io">
+                  <input type="hidden" name="_language" value="it">
+                  <!-- Trappola per i bot: le persone non vedono questo campo -->
+                  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="nome">Nome e cognome<span class="req" aria-hidden="true">*</span></label>
+                      <input class="form-control" type="text" id="nome" name="nome" autocomplete="name" required minlength="2">
+                      <p class="invalid-hint">Scrivi il tuo nome, così so come chiamarti.</p>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="email">Email<span class="req" aria-hidden="true">*</span></label>
+                      <input class="form-control" type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-aiuto">
+                      <p class="invalid-hint">Controlla l'indirizzo: sembra mancare qualcosa.</p>
+                      <p class="form-text mb-0" id="email-aiuto">La uso solo per risponderti.</p>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="azienda">Azienda o ente</label>
+                      <input class="form-control" type="text" id="azienda" name="azienda" autocomplete="organization">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="profilo">Chi sei<span class="req" aria-hidden="true">*</span></label>
+                      <select class="form-select" id="profilo" name="profilo" required>
+                        <option value="" selected disabled>Scegli un'opzione</option>
+                        <option>Titolare o manager di un'impresa</option>
+                        <option>Ente di formazione o associazione</option>
+                        <option>Università</option>
+                        <option>Altro</option>
+                      </select>
+                      <p class="invalid-hint">Scegli l'opzione più vicina a te.</p>
+                    </div>
+
+                    <div class="col-12">
+                      <fieldset class="topic-group">
+                        <legend>Di cosa vuoi parlare?<span class="req" aria-hidden="true">*</span></legend>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="argomento" id="arg-consulenza" value="Consulenza AI per la mia azienda" required>
+                          <label class="form-check-label" for="arg-consulenza">Consulenza AI per la mia azienda</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="argomento" id="arg-formazione" value="Un corso o un intervento formativo">
+                          <label class="form-check-label" for="arg-formazione">Un corso o un intervento formativo</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="argomento" id="arg-altro" value="Altro">
+                          <label class="form-check-label" for="arg-altro">Altro</label>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label" for="messaggio">Messaggio<span class="req" aria-hidden="true">*</span></label>
+                      <textarea class="form-control" id="messaggio" name="messaggio" rows="6" required minlength="20" placeholder="Es. Siamo in otto, i preventivi li facciamo ancora a mano e ci va via mezza giornata a settimana."></textarea>
+                      <p class="invalid-hint">Scrivi almeno un paio di frasi (20 caratteri), così parto già con qualche informazione.</p>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="privacy" name="privacy" value="accettata" required>
+                        <label class="form-check-label" for="privacy">Ho letto l'informativa qui sotto e accetto che i miei dati vengano usati per rispondermi.<span class="req" aria-hidden="true">*</span></label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 d-flex flex-wrap align-items-center gap-3 mt-4">
+                      <button class="btn btn-ink btn-lg" type="submit">Invia il messaggio <span class="arrow" aria-hidden="true">→</span></button>
+                      <span class="form-text">I campi con <span class="accent">*</span> sono obbligatori.</span>
+                    </div>
+                  </div>
+                </form>
+
+                <details class="privacy-details">
+                  <summary>Informativa privacy, in breve</summary>
+                  <p>Titolare del trattamento è Umberto Brignone. I dati che inserisci nel modulo (nome, email, azienda e messaggio) servono solo per risponderti e non vengono ceduti a nessuno per fini commerciali.</p>
+                  <p>Il modulo è gestito da Formspree, un servizio che riceve il messaggio e lo inoltra alla mia casella email. Conservo la corrispondenza per il tempo necessario a gestire la tua richiesta.</p>
+                  <p>Puoi chiedermi in qualsiasi momento di vedere, correggere o cancellare i tuoi dati, scrivendomi da questo stesso modulo.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <aside class="contact-aside">
+              <h2>Cosa succede dopo</h2>
+              <ol class="steps">
+                <li>Leggo il messaggio e ti rispondo personalmente, di solito con qualche domanda.</li>
+                <li>Se c'è spazio per lavorare insieme, ci sentiamo per una prima chiamata, anche online.</li>
+              </ol>
+
+              <div class="aside-block">
+                <h3>Preferisci LinkedIn?</h3>
+                <p>Mi trovi anche su <a class="ext" href="https://www.linkedin.com/in/umberto-brignone/" target="_blank" rel="noopener">LinkedIn</a>, e rispondo pure lì.</p>
+              </div>
+              <div class="aside-block">
+                <h3>Dove lavoro</h3>
+                <p>Sto a Dronero, in Valle Maira (CN). In presenza giro il Piemonte, online lavoro con chiunque.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <img src="assets/img/favicon.svg" alt="" width="40" height="40">
+            <span><strong>Umberto Brignone</strong><small>Dronero (CN) · Valle Maira</small></span>
+          </a>
+          <p>Aiuto le piccole e medie imprese a usare dati e intelligenza artificiale nel lavoro di tutti i giorni.</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Pagine</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="progetti.html">Progetti</a></li>
+            <li><a href="cv.html">Curriculum</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Mi trovi anche qui</h2>
+          <ul class="footer-links">
+            <li><a class="ext" href="https://www.linkedin.com/in/umberto-brignone/" target="_blank" rel="me noopener">LinkedIn</a></li>
+            <li><a class="ext" href="https://github.com/UmbyWT" target="_blank" rel="me noopener">GitHub</a></li>
+            <li><a class="ext" href="https://www.pasticceriabrignone.com" target="_blank" rel="noopener">Brignone 1964</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Umberto Brignone</span>
+        <span>Fatto in HTML e Sass, senza JavaScript · <a href="https://github.com/UmbyWT/umbywt.github.io" target="_blank" rel="noopener">codice su GitHub</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

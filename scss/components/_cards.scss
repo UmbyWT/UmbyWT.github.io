@@ -1,0 +1,183 @@
+// =============================================================
+// Card, servizi, pubblico: Flexbox per le due card del pubblico,
+// Grid per i servizi e per le competenze
+// =============================================================
+
+// "A chi mi rivolgo" (Flexbox)
+.audience {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+
+  > .card { flex: 1 1 20rem; }
+}
+
+.card {
+  box-shadow: var(--ub-shadow);
+  color: var(--ub-text);
+
+  h3 { font-size: 1.35rem; margin-bottom: .75rem; }
+  p:last-child { margin-bottom: 0; }
+}
+
+.audience-card {
+  .card-body { padding: clamp(1.5rem, 4vw, 2.25rem); }
+
+  p { color: var(--ub-muted); }
+}
+
+.audience-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(44);
+  height: rem(44);
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  background: var(--ub-accent-soft);
+  color: var(--ub-accent);
+  font-weight: 700;
+}
+
+// Servizi (Grid)
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--ub-line);
+  border: 1px solid var(--ub-line);
+  border-radius: var(--ub-radius);
+  overflow: hidden;
+}
+
+.service {
+  padding: clamp(1.5rem, 3.5vw, 2rem);
+  background: var(--ub-surface);
+
+  h3 { font-size: 1.2rem; margin-bottom: .6rem; }
+  p { margin: 0; color: var(--ub-muted); font-size: 1rem; }
+}
+
+.service-num {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-size: .85rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  color: var(--ub-accent);
+}
+
+// Competenze (Grid) e chip
+.skills-grid {
+  display: grid;
+  gap: 2rem;
+
+  @include media-breakpoint-up(md) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @include media-breakpoint-up(xl) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--ub-line);
+  }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: .35rem .8rem;
+    font-size: .875rem;
+    line-height: 1.3;
+    background: var(--ub-surface);
+    border: 1px solid var(--ub-line);
+    border-radius: 999px;
+  }
+
+  &--sm li {
+    padding: .2rem .6rem;
+    font-size: .78rem;
+    background: transparent;
+  }
+}
+
+.languages {
+  margin-top: 2.5rem;
+  color: var(--ub-muted);
+}
+
+// Fascia blu con la citazione
+.band {
+  background: var(--ub-band);
+  color: var(--ub-band-text);
+
+  h2, h3 { color: var(--ub-band-text); }
+  p { color: var(--ub-band-muted); }
+  .eyebrow { color: var(--ub-band-accent); }
+}
+
+.quote {
+  max-width: 52rem;
+  margin: 0 auto;
+  text-align: center;
+
+  blockquote {
+    position: relative;
+    margin: 0;
+    color: var(--ub-band-text);
+    font-size: clamp(1.45rem, 1rem + 2vw, 2.25rem);
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: -.01em;
+
+    p { color: inherit; margin: 0; }
+
+    &::before {
+      content: "\201C";
+      display: block;
+      height: .6em;
+      font-size: 3em;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--ub-band-accent);
+    }
+  }
+
+  figcaption {
+    margin-top: 1.5rem;
+    font-size: .95rem;
+    color: var(--ub-band-muted);
+  }
+}
+
+// Invito finale
+.cta-band {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border-radius: calc(var(--ub-radius) * 1.4);
+  background: var(--ub-band);
+  color: var(--ub-band-text);
+
+  > div { flex: 1 1 24rem; }
+
+  h2 {
+    color: var(--ub-band-text);
+    font-size: clamp(1.6rem, 1.1rem + 2vw, 2.3rem);
+    margin-bottom: .75rem;
+  }
+
+  p { margin: 0; color: var(--ub-band-muted); font-size: 1.1rem; }
+}

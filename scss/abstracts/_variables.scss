@@ -1,0 +1,98 @@
+// =============================================================
+// Variabili del progetto
+// Caricate PRIMA di Bootstrap: così le sue !default vengono
+// sovrascritte e il framework si compila già con i miei colori.
+// =============================================================
+
+// Palette (chiaro)
+$ink:           #1c2742; // blu notte, lo stesso della felpa aziendale
+$cream:         #f8f4ee; // sfondo carta
+$paper:         #fffdf9; // superfici e card
+$caramel:       #9a5714; // accento, contrasto AA sul crema (5.1:1)
+$caramel-light: #e3a766; // accento sulle fasce scure
+$slate:         #5a6275; // testo secondario (5.6:1)
+$line:          #e4ddd1; // bordi e divisori
+
+// Palette (scuro, usata con prefers-color-scheme: dark)
+$night:         #10172a;
+$night-surface: #18213a;
+$night-text:    #ebe5da;
+$night-muted:   #a3aabb;
+$night-line:    #2a3452;
+$night-accent:  #e7b27a;
+
+// Categorie dei progetti: nome => (colore di fondo, colore del testo)
+// Usata con @each in pages/_progetti.scss per generare copertine e filtri
+$project-categories: (
+  "azienda":    ($ink, $caramel-light),
+  "master":     (#26466b, #bcd0ea),
+  "formazione": ($caramel, #fbe3c7)
+);
+
+// ---------- Override di Bootstrap ----------
+$primary:   $ink;
+$secondary: $slate;
+
+$enable-shadows:  false;
+$enable-dark-mode: true;
+$color-mode-type: media-query; // dark mode dal sistema operativo, senza JavaScript
+
+$body-bg:    $cream;
+$body-color: $ink;
+$body-bg-dark:    $night;
+$body-color-dark: $night-text;
+$body-secondary-color-dark: $night-muted;
+$border-color-dark: $night-line;
+
+$font-family-sans-serif: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+$font-size-base:   1.0625rem;
+$line-height-base: 1.65;
+$headings-font-weight: 700;
+$headings-line-height: 1.15;
+$lead-font-size:   1.25rem;
+$lead-font-weight: 400;
+
+$link-color: $caramel;
+$link-decoration: underline;
+$link-hover-color: $ink;
+$link-color-dark: $night-accent;
+$link-hover-color-dark: $night-text;
+
+$border-color: $line;
+$border-radius:    .625rem;
+$border-radius-lg: 1.25rem;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1200px
+);
+
+$card-bg: var(--ub-surface);   // variabile CSS: cambia da sola in dark mode
+$card-border-color: var(--ub-line);
+$card-border-radius: 1.25rem;
+$card-spacer-y: 1.5rem;
+$card-spacer-x: 1.5rem;
+
+$input-bg: var(--ub-surface);
+$input-border-color: var(--ub-input-line);
+$input-padding-y: .7rem;
+$input-padding-x: .95rem;
+$input-focus-border-color: $caramel;
+$input-focus-box-shadow: 0 0 0 .25rem rgba($caramel, .18);
+$form-label-font-weight: 500;
+$form-check-input-checked-bg-color: $ink;
+$form-check-input-checked-border-color: $ink;
+$form-check-input-focus-border: $caramel;
+
+$btn-padding-y: .8rem;
+$btn-padding-x: 1.4rem;
+$btn-font-weight: 500;
+$btn-border-radius: 999px;
+$btn-border-radius-lg: 999px;
+$btn-border-radius-sm: 999px;
+$btn-focus-box-shadow: 0 0 0 .25rem rgba($caramel, .35);
+
+$badge-font-weight: 500;

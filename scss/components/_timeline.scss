@@ -1,0 +1,72 @@
+// Linea del tempo verticale (Flexbox)
+.timeline {
+  position: relative;
+  max-width: 50rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  // linea verticale
+  &::before {
+    content: "";
+    position: absolute;
+    top: .5rem;
+    bottom: .5rem;
+    left: rem(7);
+    width: 2px;
+    background: var(--ub-line);
+
+    @include media-breakpoint-up(md) { left: calc(8.5rem + 7px); }
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    padding: 0 0 2rem 2.5rem;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      gap: 0;
+      padding-left: 0;
+    }
+
+    &:last-child { padding-bottom: 0; }
+
+    // pallino
+    &::before {
+      content: "";
+      position: absolute;
+      top: .45rem;
+      left: 0;
+      width: rem(16);
+      height: rem(16);
+      border: 2px solid var(--ub-accent);
+      border-radius: 50%;
+      background: var(--ub-bg);
+
+      @include media-breakpoint-up(md) { left: 8.5rem; }
+    }
+
+    &.is-now::before { background: var(--ub-accent); }
+  }
+
+  .year {
+    font-weight: 700;
+    color: var(--ub-accent);
+
+    @include media-breakpoint-up(md) {
+      flex: 0 0 8.5rem;
+      padding-right: 1.5rem;
+      text-align: right;
+    }
+  }
+
+  .what {
+    @include media-breakpoint-up(md) { padding-left: 2.75rem; }
+
+    p { margin: 0; color: var(--ub-muted); }
+    strong { color: var(--ub-text); font-weight: 500; }
+  }
+}

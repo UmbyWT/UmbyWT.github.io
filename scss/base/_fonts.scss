@@ -1,0 +1,21 @@
+// Roboto ospitato sul sito: niente chiamate a Google Fonts,
+// quindi nessun IP dei visitatori inviato a server esterni (GDPR).
+$font-path: "../fonts";
+
+$roboto-faces: (
+  (300, normal, "roboto-latin-300-normal"),
+  (400, normal, "roboto-latin-400-normal"),
+  (400, italic, "roboto-latin-400-italic"),
+  (500, normal, "roboto-latin-500-normal"),
+  (700, normal, "roboto-latin-700-normal")
+);
+
+@each $weight, $style, $file in $roboto-faces {
+  @font-face {
+    font-family: "Roboto";
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src: url("#{$font-path}/#{$file}.woff2") format("woff2");
+  }
+}

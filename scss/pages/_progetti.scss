@@ -1,0 +1,159 @@
+// =============================================================
+// Pagina Progetti
+// Filtro per categoria senza JavaScript: i radio button stanno nel
+// fieldset e la griglia reagisce con :has(). Il ciclo @each genera
+// una regola per ogni categoria della mappa $project-categories.
+// Senza supporto a :has() si vedono semplicemente tutti i progetti.
+// =============================================================
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  border: 0;
+
+  legend {
+    float: left; // mette la legend in riga con i bottoni
+    width: auto;
+    margin: 0 .75rem 0 0;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--ub-muted);
+  }
+
+  input { @include sr-only; }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .45rem 1rem;
+    font-size: .95rem;
+    font-weight: 500;
+    border: 1px solid var(--ub-line);
+    border-radius: 999px;
+    background: var(--ub-surface);
+    cursor: pointer;
+    @include motion-ok { transition: background .15s ease, color .15s ease; }
+
+    &:hover { border-color: var(--ub-accent); }
+
+    .count {
+      font-size: .75rem;
+      font-weight: 400;
+      color: var(--ub-muted);
+    }
+  }
+
+  input:checked + label {
+    background: var(--ub-text);
+    border-color: var(--ub-text);
+    color: var(--ub-bg);
+
+    .count { color: inherit; opacity: .75; }
+  }
+
+  input:focus-visible + label { @include focus-ring(2px); }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@each $name, $colors in $project-categories {
+  .projects:has(#filtro-#{$name}:checked) .project:not([data-cat="#{$name}"]) {
+    display: none;
+  }
+
+  .cover-#{$name} {
+    background-color: nth($colors, 1);
+    color: nth($colors, 2);
+  }
+}
+
+// In dark mode la copertina blu si confonderebbe con la card
+@include color-mode(dark) {
+  .cover-azienda { background-color: #26365f; }
+}
+
+.project-card {
+  height: 100%;
+  overflow: hidden;
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+  }
+
+  h3 { font-size: 1.2rem; margin-bottom: .5rem; }
+
+  p { font-size: .98rem; color: var(--ub-muted); }
+
+  .chips { margin-top: auto; padding-top: .75rem; }
+
+  .card-footer {
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border-top: 1px solid var(--ub-line);
+
+    a { font-weight: 500; text-decoration: none; }
+  }
+
+  @include motion-ok {
+    transition: transform .2s ease, box-shadow .2s ease;
+
+    &:hover { transform: translateY(-3px); }
+  }
+}
+
+// Copertina tipografica: numero grande e categoria, niente immagini finte
+.project-cover {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  min-height: rem(118);
+  padding: 1.1rem 1.5rem;
+  // trama leggera a righe diagonali
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, .045) 0 1px,
+    transparent 1px 12px
+  );
+
+  .num {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: .9;
+    letter-spacing: -.04em;
+  }
+
+  .kicker {
+    font-size: .72rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+}
+
+.project-card .project-status {
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ub-accent) !important;
+  margin-bottom: .25rem;
+}
+
+.projects-note {
+  margin-top: 2.5rem;
+  color: var(--ub-muted);
+}

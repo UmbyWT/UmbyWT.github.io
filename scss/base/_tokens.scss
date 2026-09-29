@@ -1,0 +1,37 @@
+// Custom properties del progetto.
+// Il tema scuro usa il mixin color-mode() di Bootstrap, che con
+// $color-mode-type: media-query genera @media (prefers-color-scheme: dark).
+:root {
+  --ub-bg: #{$cream};
+  --ub-surface: #{$paper};
+  --ub-text: #{$ink};
+  --ub-muted: #{$slate};
+  --ub-accent: #{$caramel};
+  --ub-accent-soft: #{rgba($caramel, .1)};
+  --ub-line: #{$line};
+  --ub-input-line: #d6cdbf;
+  --ub-band: #{$ink};
+  --ub-band-text: #{$cream};
+  --ub-band-muted: #{rgba($cream, .78)};
+  --ub-band-accent: #{$caramel-light};
+  --ub-header-bg: #{rgba($cream, .86)};
+  --ub-shadow: 0 1px 2px #{rgba($ink, .05)}, 0 18px 40px -24px #{rgba($ink, .35)};
+  --ub-radius: #{$border-radius-lg};
+}
+
+@include color-mode(dark, true) {
+  --ub-bg: #{$night};
+  --ub-surface: #{$night-surface};
+  --ub-text: #{$night-text};
+  --ub-muted: #{$night-muted};
+  --ub-accent: #{$night-accent};
+  --ub-accent-soft: #{rgba($night-accent, .12)};
+  --ub-line: #{$night-line};
+  --ub-band: #{$night-surface};
+  --ub-band-text: #{$night-text};
+  --ub-band-muted: #{$night-muted};
+  --ub-band-accent: #{$night-accent};
+  --ub-header-bg: #{rgba($night, .86)};
+  --ub-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 18px 40px -24px rgba(0, 0, 0, .7);
+  --ub-input-line: #3a4668;
+}

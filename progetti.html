@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progetti · Umberto Brignone</title>
+  <meta name="description" content="Progetti in azienda, di formazione e del Master in AI: gestionale su misura, app per le fiere, machine learning, dashboard e data visualization.">
+  <meta name="author" content="Umberto Brignone">
+  <link rel="canonical" href="https://umbywt.github.io/progetti.html">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f8f4ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10172a" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph: anteprima quando il link viene condiviso -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Umberto Brignone">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Progetti · Umberto Brignone">
+  <meta property="og:description" content="Progetti in azienda, di formazione e del Master in AI: gestionale su misura, app per le fiere, machine learning, dashboard e data visualization.">
+  <meta property="og:url" content="https://umbywt.github.io/progetti.html">
+  <meta property="og:image" content="https://umbywt.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Umberto Brignone, AI Strategist e consulente AI per PMI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Progetti · Umberto Brignone">
+  <meta name="twitter:description" content="Progetti in azienda, di formazione e del Master in AI: gestionale su misura, app per le fiere, machine learning, dashboard e data visualization.">
+  <meta name="twitter:image" content="https://umbywt.github.io/assets/img/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/roboto-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/roboto-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link visually-hidden-focusable" href="#contenuto">Vai al contenuto</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/img/favicon.svg" alt="" width="40" height="40">
+        <span><strong>Umberto Brignone</strong><small>AI Strategist · Consulente AI per PMI</small></span>
+      </a>
+
+      <!-- Menu mobile senza JavaScript: la checkbox apre e chiude il menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Apri o chiudi il menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <nav class="site-nav" aria-label="Menu principale">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="progetti.html" aria-current="page">Progetti</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li class="nav-cta"><a href="contatti.html">Contattami</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Progetti</h1>
+        <p class="lead">Alcuni li ho costruiti in azienda, perché avevo un problema da risolvere il lunedì mattina. Altri vengono dal Master in AI e Agenti AI per il Business, su dataset pubblici. Li tengo nella stessa pagina perché il metodo non cambia: prima capisco i dati, poi scelgo lo strumento.</p>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <div class="container projects">
+        <fieldset class="filter">
+          <legend>Mostra</legend>
+            <input type="radio" name="filtro" id="filtro-tutti" value="tutti" checked>
+            <label for="filtro-tutti">Tutti <span class="count">14</span></label>
+            <input type="radio" name="filtro" id="filtro-azienda" value="azienda">
+            <label for="filtro-azienda">In azienda <span class="count">4</span></label>
+            <input type="radio" name="filtro" id="filtro-formazione" value="formazione">
+            <label for="filtro-formazione">Formazione <span class="count">2</span></label>
+            <input type="radio" name="filtro" id="filtro-master" value="master">
+            <label for="filtro-master">Master <span class="count">8</span></label>
+        </fieldset>
+
+        <ul class="project-grid">
+            <li class="project" data-cat="azienda">
+              <article class="card project-card">
+                <div class="project-cover cover-azienda" aria-hidden="true"><span class="num">01</span><span class="kicker">In azienda</span></div>
+                <div class="card-body">
+                  <p class="project-status">In uso</p>
+                  <h3>Il gestionale di Brignone 1964</h3>
+                  <p>Un gestionale scritto da zero per la mia azienda. Tiene insieme acquisti, fornitori, registro dei cespiti e corrispettivi del negozio e del bistrot, e riconcilia tutto con lo schema di bilancio CEE. Il prossimo modulo è la liquidazione IVA.</p>
+                  <ul class="chips chips--sm"><li>React</li><li>TypeScript</li><li>Fastify</li><li>PostgreSQL</li><li>Docker</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="azienda">
+              <article class="card project-card">
+                <div class="project-cover cover-azienda" aria-hidden="true"><span class="num">02</span><span class="kicker">In azienda</span></div>
+                <div class="card-body">
+                  <p class="project-status">In sviluppo</p>
+                  <h3>Brignone Fiere</h3>
+                  <p>Un'app per iPhone che fa da cassa alle fiere. Tasti prodotto grandi, pagamento con carta direttamente sul telefono con Stripe Tap to Pay, documento commerciale inviato all'Agenzia delle Entrate e scontrino stampato solo se il cliente lo chiede.</p>
+                  <ul class="chips chips--sm"><li>iOS</li><li>Stripe</li><li>Documento commerciale online</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="azienda">
+              <article class="card project-card">
+                <div class="project-cover cover-azienda" aria-hidden="true"><span class="num">03</span><span class="kicker">In azienda</span></div>
+                <div class="card-body">
+                  <p class="project-status">In corso</p>
+                  <h3>Schede prodotto dello shop online</h3>
+                  <p>Uno standard unico per tutte le schede dell'e-commerce: ingredienti, allergeni, peso e conservazione in campi strutturati, il racconto del prodotto e la parte SEO nella descrizione. Ho iniziato dai tre prodotti più venduti.</p>
+                  <ul class="chips chips--sm"><li>Shopify</li><li>SEO</li><li>Contenuti</li></ul>
+                </div>
+                <div class="card-footer"><a class="ext" href="https://www.pasticceriabrignone.com" target="_blank" rel="noopener">Vai allo shop</a></div>
+              </article>
+            </li>
+            <li class="project" data-cat="azienda">
+              <article class="card project-card">
+                <div class="project-cover cover-azienda" aria-hidden="true"><span class="num">04</span><span class="kicker">In azienda</span></div>
+                <div class="card-body">
+                  <p class="project-status">In progettazione</p>
+                  <h3>Presenze con QR code</h3>
+                  <p>Per chi lavora fuori sede: il dipendente inquadra un QR code con lo smartphone quando arriva e quando esce, e il foglio presenze si compila da solo. Oggi lo stesso lavoro si fa a mano, un foglio Google per persona.</p>
+                  <ul class="chips chips--sm"><li>Automazione</li><li>Google Sheets</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="formazione">
+              <article class="card project-card">
+                <div class="project-cover cover-formazione" aria-hidden="true"><span class="num">05</span><span class="kicker">Formazione</span></div>
+                <div class="card-body">
+                  <p class="project-status">Maggio – giugno 2026</p>
+                  <h3>Intelligenza artificiale per le aziende</h3>
+                  <p>Un corso di formazione professionale all'AFP di Verzuolo, per imprenditori e professionisti. L'ho progettato e tenuto da solo: come ragionare su una strategia AI, quali strumenti no-code usare, casi d'uso presi da PMI vere.</p>
+                  <ul class="chips chips--sm"><li>Docenza</li><li>Strategia AI</li><li>No-code</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="formazione">
+              <article class="card project-card">
+                <div class="project-cover cover-formazione" aria-hidden="true"><span class="num">06</span><span class="kicker">Formazione</span></div>
+                <div class="card-body">
+                  <p class="project-status">180 ore</p>
+                  <h3>Progetto educativo Fondazione CRT</h3>
+                  <p>Formatore in un progetto educativo della Fondazione CRT, per un totale di 180 ore di formazione.</p>
+                  <ul class="chips chips--sm"><li>Formazione</li><li>Didattica</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="master">
+              <article class="card project-card">
+                <div class="project-cover cover-master" aria-hidden="true"><span class="num">07</span><span class="kicker">Master AI</span></div>
+                <div class="card-body">
+                  <p class="project-status">Machine learning</p>
+                  <h3>Vendite e qualità: due modelli</h3>
+                  <p>Su due dataset pubblici, le vendite di un supermercato e la qualità delle mele, ho costruito un modello di regressione e uno di classificazione. La versione finale usa LassoCV con cross validation e un ensemble di alberi decisionali per ridurre la varianza.</p>
+                  <ul class="chips chips--sm"><li>Python</li><li>scikit-learn</li><li>Google Colab</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="master">
+              <article class="card project-card">
+                <div class="project-cover cover-master" aria-hidden="true"><span class="num">08</span><span class="kicker">Master AI</span></div>
+                <div class="card-body">
+                  <p class="project-status">Machine learning</p>
+                  <h3>Chi si salva sul Titanic</h3>
+                  <p>Un albero decisionale con tutto il preprocessing dentro una Pipeline di scikit-learn, split stratificati e una regressione logistica come termine di paragone prima di scegliere la profondità dell'albero.</p>
+                  <ul class="chips chips--sm"><li>Python</li><li>scikit-learn</li><li>Pipeline</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="master">
+              <article class="card project-card">
+                <div class="project-cover cover-master" aria-hidden="true"><span class="num">09</span><span class="kicker">Master AI</span></div>
+                <div class="card-body">
+                  <p class="project-status">Machine learning</p>
+                  <h3>Riconoscere un vino dai numeri</h3>
+                  <p>Classificazione dei vini del dataset Wine con una SVM. Il lavoro vero sta nella validazione degli iperparametri: capire quale combinazione regge anche su dati che il modello non ha mai visto.</p>
+                  <ul class="chips chips--sm"><li>Python</li><li>SVM</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="master">
+              <article class="card project-card">
+                <div class="project-cover cover-master" aria-hidden="true"><span class="num">10</span><span class="kicker">Master AI</span></div>
+                <div class="card-body">
+                  <p class="project-status">Data visualization</p>
+                  <h3>L&#x27;impronta di carbonio del cibo</h3>
+                  <p>Una dashboard in Tableau sui dati di Our World in Data: quanto pesano sul clima i diversi alimenti.</p>
+                  <ul class="chips chips--sm"><li>Tableau</li><li>Data viz</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="master">
+              <article class="card project-card">
+                <div class="project-cover cover-master" aria-hidden="true"><span class="num">11</span><span class="kicker">Master AI</span></div>
+                <div class="card-body">
+                  <p class="project-status">Data visualization</p>
+                  <h3>Cosa mangiamo e obesità</h3>
+                  <p>Un report in Looker Studio che mette a confronto il consumo di derivati animali e vegetali con l'indice di obesità.</p>
+                  <ul class="chips chips--sm"><li>Looker Studio</li><li>Data viz</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="master">
+              <article class="card project-card">
+                <div class="project-cover cover-master" aria-hidden="true"><span class="num">12</span><span class="kicker">Master AI</span></div>
+                <div class="card-body">
+                  <p class="project-status">Data science</p>
+                  <h3>L&#x27;istruzione nel mondo</h3>
+                  <p>Analisi in Python dei dati sull'istruzione della Banca Mondiale: pulizia del dataset, esplorazione e grafici.</p>
+                  <ul class="chips chips--sm"><li>Python</li><li>pandas</li><li>NumPy</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="master">
+              <article class="card project-card">
+                <div class="project-cover cover-master" aria-hidden="true"><span class="num">13</span><span class="kicker">Master AI</span></div>
+                <div class="card-body">
+                  <p class="project-status">Logica e algoritmi</p>
+                  <h3>Un processo per IncluDO</h3>
+                  <p>Per un centro di formazione professionale per migranti (cliente di fantasia) ho tradotto un processo in diagramma di flusso, tavola di verità e pseudocodice, con i casi di test.</p>
+                  <ul class="chips chips--sm"><li>Pensiero computazionale</li><li>Pseudocodice</li></ul>
+                </div>
+              </article>
+            </li>
+            <li class="project" data-cat="master">
+              <article class="card project-card">
+                <div class="project-cover cover-master" aria-hidden="true"><span class="num">14</span><span class="kicker">Master AI</span></div>
+                <div class="card-body">
+                  <p class="project-status">Sviluppo web</p>
+                  <h3>Questo sito</h3>
+                  <p>Quattro pagine in HTML e Sass, con Bootstrap personalizzato partendo dalle sue variabili. Il menu su mobile, i filtri di questa pagina e gli avvisi del form funzionano senza una riga di JavaScript.</p>
+                  <ul class="chips chips--sm"><li>HTML</li><li>Sass</li><li>Bootstrap</li><li>GitHub Pages</li></ul>
+                </div>
+                <div class="card-footer"><a class="ext" href="https://github.com/UmbyWT/umbywt.github.io" target="_blank" rel="noopener">Codice su GitHub</a></div>
+              </article>
+            </li>
+        </ul>
+
+        <p class="projects-note">Il codice dei progetti pubblici è sul mio <a class="ext" href="https://github.com/UmbyWT" target="_blank" rel="noopener">profilo GitHub</a>. Per gli altri, se ti interessa vederli da vicino, <a href="contatti.html">scrivimi</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <img src="assets/img/favicon.svg" alt="" width="40" height="40">
+            <span><strong>Umberto Brignone</strong><small>Dronero (CN) · Valle Maira</small></span>
+          </a>
+          <p>Aiuto le piccole e medie imprese a usare dati e intelligenza artificiale nel lavoro di tutti i giorni.</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Pagine</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="progetti.html">Progetti</a></li>
+            <li><a href="cv.html">Curriculum</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Mi trovi anche qui</h2>
+          <ul class="footer-links">
+            <li><a class="ext" href="https://www.linkedin.com/in/umberto-brignone/" target="_blank" rel="me noopener">LinkedIn</a></li>
+            <li><a class="ext" href="https://github.com/UmbyWT" target="_blank" rel="me noopener">GitHub</a></li>
+            <li><a class="ext" href="https://www.pasticceriabrignone.com" target="_blank" rel="noopener">Brignone 1964</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Umberto Brignone</span>
+        <span>Fatto in HTML e Sass, senza JavaScript · <a href="https://github.com/UmbyWT/umbywt.github.io" target="_blank" rel="noopener">codice su GitHub</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

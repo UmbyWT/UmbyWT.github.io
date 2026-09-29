@@ -1,0 +1,155 @@
+// =============================================================
+// Pagina Contatti
+// Layout con la griglia di Bootstrap (row / col-lg-*),
+// feedback di validazione in puro CSS con :user-invalid
+// (si attiva solo dopo che l'utente ha toccato il campo).
+// =============================================================
+.contact-card {
+  .card-body { padding: clamp(1.5rem, 4.5vw, 2.5rem); }
+}
+
+.req {
+  margin-left: .15rem;
+  color: var(--ub-accent);
+}
+
+.form-text { color: var(--ub-muted); }
+
+.form-control,
+.form-select {
+  color: var(--ub-text);
+
+  &::placeholder { color: var(--ub-muted); opacity: .75; }
+}
+
+// Messaggio d'errore nascosto finché il campo non è davvero sbagliato
+.invalid-hint {
+  display: none;
+  margin-top: .35rem;
+  font-size: .85rem;
+  color: #b3261e;
+
+  @include color-mode(dark) { color: #ffb4ab; }
+}
+
+.form-control:user-invalid,
+.form-select:user-invalid {
+  border-color: #b3261e;
+
+  @include color-mode(dark) { border-color: #ffb4ab; }
+
+  ~ .invalid-hint { display: block; }
+}
+
+.form-check-input:user-invalid ~ .form-check-label { color: #b3261e; }
+
+// Campo trappola per i bot (honeypot): invisibile alle persone
+.hp { display: none !important; }
+
+.topic-group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  legend {
+    float: none;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .form-check { margin-bottom: .35rem; }
+}
+
+.privacy-details {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--ub-line);
+  border-radius: $border-radius;
+  background: var(--ub-bg);
+
+  summary {
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  p {
+    margin: .75rem 0 0;
+    font-size: .92rem;
+    color: var(--ub-muted);
+  }
+}
+
+.contact-aside {
+  @include media-breakpoint-up(lg) {
+    position: sticky;
+    top: rem(104);
+  }
+
+  h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+
+  .steps {
+    counter-reset: step;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+
+    li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 2.75rem;
+      color: var(--ub-muted);
+
+      & + li { margin-top: 1rem; }
+
+      &::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: -.1rem;
+        display: grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: var(--ub-accent-soft);
+        color: var(--ub-accent);
+        font-weight: 700;
+        font-size: .9rem;
+      }
+    }
+  }
+}
+
+.aside-block {
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--ub-line);
+
+  h3 { font-size: 1rem; margin-bottom: .4rem; }
+  p { margin: 0; color: var(--ub-muted); }
+}
+
+// Pagina 404
+.not-found {
+  display: grid;
+  place-items: center;
+  min-height: 60vh;
+  text-align: center;
+  padding-block: 4rem;
+
+  .code {
+    display: block;
+    font-size: clamp(5rem, 3rem + 10vw, 9rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05em;
+    color: var(--ub-accent);
+  }
+
+  h1 { font-size: clamp(1.8rem, 1.2rem + 2.5vw, 2.8rem); margin: 1rem 0; }
+
+  p { max-width: 32rem; margin: 0 auto 2rem; color: var(--ub-muted); }
+
+  .hero-actions { justify-content: center; }
+}

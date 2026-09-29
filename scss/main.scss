@@ -1,0 +1,53 @@
+// =============================================================
+// umbywt.github.io · foglio di stile principale
+// Compilazione:  npm run build   (vedi package.json)
+//
+// Ordine:
+//  1. le mie variabili, che sovrascrivono quelle di Bootstrap
+//  2. Bootstrap 5, solo i moduli che uso (niente JavaScript)
+//  3. i miei mixin, la base, i layout, i componenti e le pagine
+// =============================================================
+
+// 1. Configurazione
+@import "bootstrap/scss/functions";
+@import "abstracts/variables";
+
+// 2. Bootstrap
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
+
+// 3. Progetto
+@import "abstracts/mixins";
+
+@import "base/fonts";
+@import "base/tokens";
+@import "base/base";
+
+@import "layout/header";
+@import "layout/footer";
+
+@import "components/buttons";
+@import "components/hero";
+@import "components/cards";
+@import "components/timeline";
+
+@import "pages/progetti";
+@import "pages/cv";
+@import "pages/contatti";
+
+@import "base/print";

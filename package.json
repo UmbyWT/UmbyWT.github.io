@@ -1,0 +1,16 @@
+{
+  "name": "umbywt.github.io",
+  "version": "1.0.0",
+  "description": "Sito personale di Umberto Brignone: HTML, Sass e Bootstrap, pubblicato con GitHub Pages",
+  "scripts": {
+    "build": "sass scss/main.scss assets/css/style.css --load-path=node_modules --style=compressed --no-source-map --quiet-deps --silence-deprecation=import,global-builtin,color-functions,if-function",
+    "watch": "sass scss/main.scss assets/css/style.css --load-path=node_modules --watch --quiet-deps --silence-deprecation=import,global-builtin,color-functions,if-function"
+  },
+  "devDependencies": {
+    "@fontsource/roboto": "^5.3.0",
+    "bootstrap": "^5.3.8",
+    "sass": "^1.105.0"
+  },
+  "private": true,
+  "author": "Umberto Brignone"
+}

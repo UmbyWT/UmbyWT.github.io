@@ -1,0 +1,75 @@
+// =============================================================
+// Stampa: la pagina CV diventa un PDF pulito con Ctrl+P / Cmd+P
+// =============================================================
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  :root {
+    --ub-bg: #fff;
+    --ub-surface: #fff;
+    --ub-text: #{$ink};
+    --ub-muted: #3d4556;
+    --ub-line: #{$line};
+    --ub-shadow: none;
+  }
+
+  html { font-size: 11.5px; }
+
+  body { background: #fff; }
+
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .cv-print-hint,
+  .no-print { display: none !important; }
+
+  .container { max-width: none; padding: 0; }
+
+  .cv {
+    grid-template-columns: 62mm minmax(0, 1fr);
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .cv-side,
+  .cv-side * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-side { background: $ink !important; }
+
+  .cv-main { order: 0; padding: 0 0 0 8mm; }
+
+  // Foto: in stampa vale sempre quella della colonna laterale
+  .cv-header picture { display: none !important; }
+  .cv-side picture { display: block !important; }
+
+  .cv-side { padding: 6mm 5mm; }
+  .cv-side h2 { margin-top: 5mm; }
+  .cv-photo { width: 28mm; height: 28mm; }
+
+  .cv-section { margin-top: 1rem; break-inside: auto; }
+
+  .cv-section > h2 {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-entry {
+    break-inside: avoid;
+    padding-bottom: .8rem;
+    margin-bottom: .8rem;
+  }
+
+  .cv-header { padding-bottom: .75rem; margin-bottom: .25rem; }
+  .cv-section > h2 { margin-bottom: .75rem; }
+  .cv-consent { margin-top: 1rem; }
+
+  a { color: inherit; text-decoration: none; }
+}

@@ -1,0 +1,198 @@
+@use "sass:math";
+
+// =============================================================
+// Pagina CV: CSS Grid con colonna laterale blu (come il CV in PDF)
+// =============================================================
+.cv {
+  display: grid;
+  margin-block: clamp(1.5rem, 4vw, 3rem) clamp(3rem, 8vw, 5rem);
+  background: var(--ub-surface);
+  border: 1px solid var(--ub-line);
+  border-radius: calc(var(--ub-radius) * 1.2);
+  box-shadow: var(--ub-shadow);
+  overflow: hidden;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: rem(300) minmax(0, 1fr);
+  }
+}
+
+.cv-side {
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  background: $ink;
+  color: rgba($cream, .82);
+
+  @include color-mode(dark) { background: #0b1122; }
+
+  h2 {
+    margin: 2rem 0 .9rem;
+    padding-bottom: .5rem;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: $caramel-light;
+    border-bottom: 1px solid rgba($cream, .18);
+  }
+
+  ul { margin: 0; padding: 0; list-style: none; }
+  li { font-size: .92rem; line-height: 1.45; }
+  li + li { margin-top: .45rem; }
+
+  a { color: $cream; }
+}
+
+.cv-photo {
+  display: block;
+  width: rem(132);
+  height: rem(132);
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  border: 3px solid rgba($cream, .9);
+  object-fit: cover;
+
+  @include media-breakpoint-up(lg) { margin-inline: 0; }
+}
+
+// Livello delle competenze: 5 pallini disegnati con due gradienti.
+// Il valore arriva dall'HTML con --level (es. style="--level: 4"):
+// lo strato ::before, pieno, si allarga di un pallino per livello.
+$dot: 9px;
+$dot-gap: 5px;
+$dot-step: $dot + $dot-gap;
+
+@function dot-row($color) {
+  @return radial-gradient(circle at math.div($dot, 2) 50%, $color 0 math.div($dot, 2) - .5px, transparent math.div($dot, 2))
+    0 0 / #{$dot-step} #{$dot} repeat-x;
+}
+
+.skill-level {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .75rem;
+
+  .dots {
+    --level: 0;
+    position: relative;
+    flex-shrink: 0;
+    width: $dot * 5 + $dot-gap * 4;
+    height: $dot;
+    background: dot-row(rgba($cream, .25));
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: calc(#{$dot-step} * var(--level) - #{$dot-gap});
+      background: dot-row($caramel-light);
+    }
+  }
+}
+
+.cv-main {
+  padding: clamp(1.75rem, 5vw, 3.25rem);
+
+  // Su mobile prima nome e contenuto, poi la colonna blu
+  @include media-breakpoint-down(lg) { order: -1; }
+}
+
+.cv-photo--mobile {
+  width: rem(96);
+  height: rem(96);
+  margin: 0 0 1.25rem;
+  border-color: var(--ub-line);
+}
+
+.cv-header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--ub-line);
+
+  h1 {
+    font-size: clamp(2rem, 1.4rem + 2.6vw, 3rem);
+    margin-bottom: .35rem;
+  }
+
+  .role { margin: 0; font-size: 1.15rem; color: var(--ub-accent); font-weight: 500; }
+}
+
+.cv-print-hint {
+  margin: 1rem 0 0;
+  font-size: .9rem;
+  color: var(--ub-muted);
+}
+
+.cv-section {
+  margin-top: 2.25rem;
+
+  > h2 {
+    margin-bottom: 1.25rem;
+    padding-bottom: .5rem;
+    font-size: 1.05rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ub-text);
+    border-bottom: 2px solid var(--ub-accent);
+    display: inline-block;
+  }
+
+  p { color: var(--ub-muted); }
+}
+
+.cv-entry {
+  display: grid;
+  gap: .15rem 1.5rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px dashed var(--ub-line);
+  break-inside: avoid;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  &:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+
+  h3 { font-size: 1.1rem; margin: 0; }
+
+  .where { margin: 0; color: var(--ub-muted); font-size: .95rem; }
+
+  .when {
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--ub-accent);
+    white-space: nowrap;
+
+    @include media-breakpoint-up(md) { grid-row: 1; grid-column: 2; text-align: right; }
+  }
+
+  ul {
+    grid-column: 1 / -1;
+    margin: .6rem 0 0;
+    padding-left: 1.1rem;
+    color: var(--ub-muted);
+    font-size: .97rem;
+
+    li + li { margin-top: .25rem; }
+    li::marker { color: var(--ub-accent); }
+  }
+
+  > p { grid-column: 1 / -1; margin: .5rem 0 0; font-size: .97rem; }
+}
+
+.cv-list {
+  padding-left: 1.1rem;
+  color: var(--ub-muted);
+
+  li + li { margin-top: .35rem; }
+  li::marker { color: var(--ub-accent); }
+  strong { color: var(--ub-text); font-weight: 500; }
+}
+
+.cv-consent {
+  margin-top: 2.5rem;
+  font-size: .78rem;
+  font-style: italic;
+  color: var(--ub-muted);
+}

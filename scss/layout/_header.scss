@@ -1,0 +1,149 @@
+// =============================================================
+// Header sticky con menu mobile in solo CSS
+// Il pulsante hamburger è una <label> collegata a una checkbox:
+// quando la checkbox è spuntata, il selettore ~ mostra il menu.
+// =============================================================
+$header-height: rem(72);
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: var(--ub-header-bg);
+  border-bottom: 1px solid var(--ub-line);
+  backdrop-filter: saturate(1.4) blur(12px);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+
+  > .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: $header-height;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  color: var(--ub-text);
+  text-decoration: none;
+  line-height: 1.15;
+
+  img { width: rem(40); height: rem(40); flex-shrink: 0; }
+
+  strong { display: block; font-size: 1.0625rem; }
+
+  small {
+    display: block;
+    font-size: .75rem;
+    color: var(--ub-muted);
+    letter-spacing: .02em;
+  }
+
+  &:hover { color: var(--ub-text); }
+}
+
+// Checkbox nascosta ma raggiungibile da tastiera
+.nav-toggle { @include sr-only; }
+
+.nav-toggle-label {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: rem(44);
+  height: rem(44);
+  padding: 0 rem(11);
+  margin: 0;
+  border: 1px solid var(--ub-line);
+  border-radius: 50%;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 2px;
+    background: var(--ub-text);
+    border-radius: 2px;
+    transform-origin: center;
+    @include motion-ok { transition: transform .25s ease, opacity .2s ease; }
+  }
+
+  @include media-breakpoint-up(md) { display: none; }
+}
+
+.nav-toggle:focus-visible + .nav-toggle-label { @include focus-ring(2px); }
+
+// Da hamburger a X
+.nav-toggle:checked + .nav-toggle-label {
+  span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  span:nth-child(2) { opacity: 0; }
+  span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+.site-nav {
+  display: none;
+  flex-basis: 100%;
+  padding-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    flex-basis: auto;
+    padding-bottom: 0;
+  }
+}
+
+.nav-toggle:checked ~ .site-nav { display: block; }
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    align-items: center;
+    gap: .35rem;
+  }
+
+  a {
+    display: block;
+    padding: .7rem .25rem;
+    color: var(--ub-text);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ub-line);
+
+    @include media-breakpoint-up(md) {
+      padding: .5rem .8rem;
+      border-bottom: 0;
+      border-radius: 999px;
+    }
+
+    &:hover { color: var(--ub-accent); }
+
+    &[aria-current="page"] {
+      color: var(--ub-accent);
+
+      @include media-breakpoint-up(md) { background: var(--ub-accent-soft); }
+    }
+  }
+
+  // Ultima voce: invito all'azione
+  .nav-cta a {
+    @include media-breakpoint-up(md) {
+      margin-left: .5rem;
+      padding-inline: 1.1rem;
+      background: var(--ub-text);
+      color: var(--ub-bg);
+
+      &:hover { background: var(--ub-accent); color: var(--ub-bg); }
+
+      &[aria-current="page"] { background: var(--ub-accent); color: var(--ub-bg); }
+    }
+  }
+}
